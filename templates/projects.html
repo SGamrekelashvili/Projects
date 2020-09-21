@@ -1,0 +1,95 @@
+{% extends 'header.html' %}
+
+{%block header%}
+
+
+{% endblock %}
+{% block body %}
+<section class="hero-wrap" style="background-image: url('/static/IMG/Main.jpg');" data-stellar-background-ratio="0.3">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row no-gutters slider-text align-items-center">
+        <div class="col-md-10 col-lg-7 ftco-animate d-flex align-items-end">
+            <div class="text">
+              <h1 class="mb-4">Georgian <span>Intergrated</span> System</h1>
+              <div class="d-flex meta">
+                  <a href="#" class="d-flex align-items-center button-link">
+                  </a>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+{% for items in sets %}
+{%if items["id"] in [1,3,5,7,9,11]%}    
+<section class="ftco-section ftco-portfolio">
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="container">
+                <div class="row no-gutters">
+                        <div class="col-md-12 portfolio-wrap">
+            <div class="row no-gutters align-items-center">
+                <div class="col-md-5 img js-fullheight" style ="background-image: url({{items["url"]}});">
+                    
+                </div>
+                <div class="col-md-7">
+                    <div class="text pt-5 pl-0 pl-lg-5 pl-md-4 ftco-animate">
+                        <div class="px-4 px-lg-4">
+                            <div class="desc">
+                                <div class="top">
+                                    <h2 class="mb-4">{{items["name"]}}</h2>
+                                </div>
+                                <div class="absolute">
+                                    <p>{{items["about"]}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>  
+        </div>
+    </div>
+</section>
+{%endif%}
+{%if items["id"] in [2,4,6,8,10,12]%}
+<section class="ftco-section ftco-portfolio">
+            <div class="container">
+                <div class="row no-gutters">
+                    <div class="container">
+                        <div class="row no-gutters">
+                            <div class="col-md-12 portfolio-wrap">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col-md-5 order-md-last img js-fullheight" style ="background-image: url({{items["url"]}});">
+                                        
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="text pt-5 pr-md-5 ftco-animate">
+                                            <div class="px-4 px-lg-4">
+                                                <div class="desc text-md-right">
+                                                    <div class="top">
+                                                        <h2 class="mb-4">{{items["name"]}}</h2>
+                                                    </div>
+                                                    <div class="absolute">
+                                                        <p>{{items["about"]}}</p>
+                    
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    
+            </div>
+        </div>  
+                </div>
+            </div>
+</section>
+{%endif%}
+{% endfor %}
+
+{% endblock %}
